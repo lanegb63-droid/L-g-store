@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="L&G Store — achadinhos, ofertas e produtos selecionados da Shopee.">
+<title>L&G Store | Achadinhos e ofertas</title>
+<style>
+:root{--pink:#ff4f9a;--purple:#7847c7;--ink:#292334;--muted:#6f6878;--bg:#fff8fc;--card:#fff;--line:#f0e5ed}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#ff4f9a,#8b55d8);color:white;padding:22px 16px 30px}
+.wrap{max-width:1100px;margin:auto;padding:0 16px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-weight:900;font-size:1.8rem;letter-spacing:-.04em}.brand span{background:white;color:var(--pink);border-radius:12px;padding:3px 8px;margin-right:6px}
+.tagline{font-size:.92rem;opacity:.95}.hero{padding:28px 0 6px;max-width:680px}.hero h1{font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.06;margin:0 0 12px}.hero p{font-size:1.05rem;line-height:1.5;margin:0 0 18px}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}.searchrow input{flex:1;min-width:180px;padding:13px 14px;border:1px solid #eadde7;border-radius:12px;font-size:1rem}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn-primary{background:var(--pink);color:#fff}.btn-light{background:#fff;color:#8b2760}.btn-outline{background:#fff;color:var(--purple);border:1px solid #e4d5f4}
+main{padding:22px 0 50px}.notice{background:#fff0f7;border:1px solid #ffd1e5;border-radius:12px;padding:12px 14px;font-size:.9rem;line-height:1.5;margin-bottom:20px}
+.categories{display:flex;gap:8px;overflow-x:auto;padding:3px 0 16px}.cat{white-space:nowrap;border:1px solid var(--line);background:white;padding:9px 13px;border-radius:999px;cursor:pointer;font-weight:650;color:#574b5d}.cat.active{background:var(--purple);color:white;border-color:var(--purple)}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:8px 0 14px}.sectionhead h2{margin:0;font-size:1.45rem}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat( auto-fit,minmax(220px,1fr));gap:15px}.product{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 15px #5a245a08}.product-art{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;background:linear-gradient(135deg,#ffe3f0,#eee4ff)}.product-body{padding:14px;display:flex;flex-direction:column;gap:9px;flex:1}.pill{font-size:.75rem;font-weight:800;color:#8b2e69;background:#fff0f7;border-radius:999px;padding:5px 8px;align-self:flex-start}.product h3{margin:0;font-size:1rem;line-height:1.35}.desc{font-size:.87rem;color:var(--muted);line-height:1.4;margin:0}.price{font-size:1.2rem;font-weight:850}.price small{display:block;font-size:.75rem;font-weight:500;color:var(--muted)}.actions{display:flex;gap:8px;margin-top:auto}.actions .btn{flex:1;font-size:.86rem;padding:10px 8px}.empty{display:none;text-align:center;padding:35px;color:var(--muted)}footer{background:#2d2432;color:#eee3ef;padding:26px 0;font-size:.88rem;line-height:1.6}footer a{color:#ffc6e1}.footergrid{display:grid;grid-template-columns:2fr 1fr;gap:20px}@media(max-width:600px){.footergrid{grid-template-columns:1fr}.brand{font-size:1.5rem}.product-art{height:125px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="top"><div><div class="brand"><span>L&G</span>Store</div><div class="tagline">Achadinhos, ofertas e novidades ✨</div></div><a class="btn btn-light" href="#produtos">Ver produtos ↓</a></div>
+  <div class="hero"><h1>Seu próximo achadinho está aqui!</h1><p>Uma seleção de produtos para facilitar o dia a dia, renovar seu estilo e encontrar boas ideias para casa e família.</p>
+   <div class="searchrow"><input id="search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"><button class="btn btn-light" id="clearSearch">Limpar</button></div>
+  </div>
+ </div>
+</header>
+<main class="wrap" id="produtos">
+ <div class="notice"><strong>Transparência:</strong> a L&G Store participa do programa de afiliados. Podemos receber comissão por compras elegíveis feitas pelos nossos links, sem custo adicional para você. Preços e disponibilidade podem mudar; confirme as informações na Shopee.</div>
+ <div class="categories" id="categories" aria-label="Categorias"></div>
+ <div class="sectionhead"><div><h2>Achadinhos em destaque 🛍️</h2><p>Escolha um produto e confira os detalhes na Shopee.</p></div><button class="btn btn-outline" id="shareStore">Compartilhar a loja</button></div>
+ <div class="grid" id="grid"></div><div class="empty" id="empty">Nenhum produto encontrado. Tente outra busca ou categoria.</div>
+</main>
+<footer><div class="wrap footergrid"><div><strong>L&G Store</strong><br>Uma vitrine independente de produtos indicados por links de afiliados. A compra, o pagamento, a entrega e o atendimento do pedido são realizados pela Shopee e pelo vendedor.</div><div><strong>Informações</strong><br><a href="#" id="affiliateInfo">Aviso de afiliados</a><br><a href="#" id="privacyInfo">Privacidade</a><br><span>Contato: adicione seu e-mail ou perfil social aqui.</span></div></div></footer>
+<script>
+/* COMO PERSONALIZAR:
+   1) Troque os produtos de exemplo no array PRODUCTS.
+   2) Substitua affiliateUrl por seu link de afiliada gerado oficialmente.
+   3) Use somente imagens e materiais que você tem autorização para divulgar.
+   Não cole senha ou código de acesso da Shopee neste arquivo.
+*/
+const PRODUCTS = [
+ {id:1,title:"Garrafa térmica",category:"Casa e decoração",emoji:"🥤",description:"Ideia prática para o dia a dia. Confira cores, avaliações e medidas na Shopee.",price:"Confira na Shopee",tag:"Achadinho",affiliateUrl:""},
+ {id:2,title:"Organizador multiuso",category:"Utilidades do dia a dia",emoji:"🧺",description:"Ajuda a manter pequenos objetos organizados. Confira tamanho e material.",price:"Confira na Shopee",tag:"Casa organizada",affiliateUrl:""},
+ {id:3,title:"Fone de ouvido",category:"Eletrônicos",emoji:"🎧",description:"Compare modelos, compatibilidade e avaliações antes de comprar.",price:"Confira na Shopee",tag:"Tecnologia",affiliateUrl:""},
+ {id:4,title:"Bolsa casual",category:"Roupas e acessórios",emoji:"👜",description:"Veja opções de cores, dimensões e avaliações do vendedor.",price:"Confira na Shopee",tag:"Estilo",affiliateUrl:""},
+ {id:5,title:"Brinquedo educativo",category:"Brinquedos",emoji:"🧸",description:"Confira faixa etária recomendada, material e informações de segurança.",price:"Confira na Shopee",tag:"Para presentear",affiliateUrl:""},
+ {id:6,title:"Kit de cuidados pessoais",category:"Beleza",emoji:"🧴",description:"Consulte composição, instruções e avaliações do produto na página oficial.",price:"Confira na Shopee",tag:"Autocuidado",affiliateUrl:""}
+];
+const CATEGORIES=["Todas","Roupas e acessórios","Casa e decoração","Eletrônicos","Brinquedos","Beleza","Utilidades do dia a dia"];
+let selectedCategory="Todas";
+const grid=document.getElementById("grid"), categories=document.getElementById("categories"), search=document.getElementById("search");
+function safeUrl(url){try{const u=new URL(url);return ["https:","http:"].includes(u.protocol)?u.href:""}catch{return ""}}
+function shareText(p){const link=safeUrl(p.affiliateUrl);return `Olha esse achadinho da L&G Store: ${p.title} ✨ ${link||"Link de compra em atualização"}\nConfira preço e disponibilidade na Shopee.`}
+function renderCategories(){categories.innerHTML="";CATEGORIES.forEach(c=>{const b=document.createElement("button");b.className="cat"+(c===selectedCategory?" active":"");b.textContent=c;b.onclick=()=>{selectedCategory=c;renderCategories();renderProducts()};categories.appendChild(b)})}
+function renderProducts(){const term=search.value.trim().toLowerCase();const list=PRODUCTS.filter(p=>(selectedCategory==="Todas"||p.category===selectedCategory)&&(`${p.title} ${p.category} ${p.description} ${p.tag}`).toLowerCase().includes(term));grid.innerHTML="";document.getElementById("empty").style.display=list.length?"none":"block";
+list.forEach(p=>{const card=document.createElement("article");card.className="product";const art=document.createElement("div");art.className="product-art";art.textContent=p.emoji;const body=document.createElement("div");body.className="product-body";const tag=document.createElement("span");tag.className="pill";tag.textContent=p.tag;const h=document.createElement("h3");h.textContent=p.title;const d=document.createElement("p");d.className="desc";d.textContent=p.description;const price=document.createElement("div");price.className="price";price.textContent=p.price;const small=document.createElement("small");small.textContent="Preço deve ser confirmado na Shopee";price.appendChild(small);const actions=document.createElement("div");actions.className="actions";const buy=document.createElement("a");buy.className="btn btn-primary";buy.textContent="Comprar";const url=safeUrl(p.affiliateUrl);buy.href=url||"https://shopee.com.br/";buy.target="_blank";buy.rel="noopener noreferrer sponsored";if(!url)buy.title="Adicione seu link oficial de afiliada no arquivo index.html";const share=document.createElement("button");share.className="btn btn-outline";share.textContent="WhatsApp";share.onclick=()=>window.open("https://wa.me/?text="+encodeURIComponent(shareText(p)),"_blank","noopener");actions.append(buy,share);body.append(tag,h,d,price,actions);card.append(art,body);grid.append(card)})}
+search.addEventListener("input",renderProducts);document.getElementById("clearSearch").onclick=()=>{search.value="";renderProducts();search.focus()};
+document.getElementById("shareStore").onclick=()=>{const text="Conheça a L&G Store: achadinhos, ofertas e novidades! Confira os produtos e os links de compra na nossa vitrine.";if(navigator.share){navigator.share({title:"L&G Store",text,url:location.href}).catch(()=>{})}else{window.open("https://wa.me/?text="+encodeURIComponent(text+" "+location.href),"_blank","noopener")}};
+document.getElementById("affiliateInfo").onclick=e=>{e.preventDefault();alert("A L&G Store pode receber comissão por compras elegíveis feitas por links de afiliados. A compra é concluída na Shopee. Preços, estoque, frete e condições devem ser confirmados no site da Shopee.")};
+document.getElementById("privacyInfo").onclick=e=>{e.preventDefault();alert("Esta versão inicial não possui cadastro de usuários nem coleta dados por formulário. Antes de adicionar ferramentas de análise, formulários ou publicidade, publique uma política de privacidade adequada.")};
+renderCategories();renderProducts();
+</script>
+</body>
+</html>
